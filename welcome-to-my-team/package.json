@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  },
+  "name": "welcome-to-my-team",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC"
+}
