@@ -1,13 +1,12 @@
 const Manager = require('../lib/Manager');
 
-const manager = new Manager('ellie', '235689', 'ellie@sillymail.com', 'Manager', '555-555-5555');
+const manager = new Manager('ellie', '235689', 'ellie@sillymail.com', '555-555-5555');
 
 test('creates the employee information', () => {
 
     expect(manager.name).toBe('ellie');
     expect(manager.id).toBe('235689');
     expect(manager.email).toBe('ellie@sillymail.com');
-    expect(manager.role).toBe('Manager');
     expect(manager.officeNumber).toBe('555-555-5555');
 });
 
