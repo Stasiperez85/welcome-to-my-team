@@ -150,7 +150,7 @@ const promptEngineer = () => {
         }
     ])
         .then((answersE) => {
-            const engineer = new Engineer(answersE.name, answersE.id, answersE.email, answersE.number)
+            const engineer = new Engineer(answersE.name, answersE.id, answersE.email, answersE.github)
             myTeam.push(engineer)
 
             switch (answersE.teamAdd) {
@@ -220,7 +220,7 @@ const promptIntern = () => {
         }
     ])
         .then((answersI) => {
-            const intern = new Intern(answersI.name, answersI.id, answersI.email, answersI.number)
+            const intern = new Intern(answersI.name, answersI.id, answersI.email, answersI.school);
             myTeam.push(intern)
 
             switch (answersI.teamAdd) {
