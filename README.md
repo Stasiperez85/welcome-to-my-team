@@ -21,6 +21,9 @@ https://drive.google.com/file/d/1di5sXrUrNZJ-MtHIontj3vEfUhwT6Xp4/view
 Credits
 YouTube, google, TA’s and tutor
 
+Screenshots
+![Screen Shot 2022-02-22 at 3 53 26 PM](https://user-images.githubusercontent.com/78401136/155233317-7e46e649-ce20-4575-b229-a4692a69e410.png)
+
 Github
 Stasiperez85
 
