@@ -8,7 +8,7 @@ Table of Contents
 * Installation
 * Usage
 * Credits
-* License
+
 
 Installation
 This is created using the command-line in VsCode. See video in usage section how it can be installed.
@@ -16,16 +16,10 @@ This is created using the command-line in VsCode. See video in usage section how
 Usage
 
 Clink link to view video of how to generate readme file.
-
+https://drive.google.com/file/d/1di5sXrUrNZJ-MtHIontj3vEfUhwT6Xp4/view
 
 Credits
 YouTube, google, TA’s and tutor
-
-License
-
-Badges
-￼
-ScreenShots
 
 Github
 Stasiperez85
