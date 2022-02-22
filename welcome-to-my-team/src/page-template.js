@@ -2,7 +2,7 @@ const Manager = require('../lib/Manager');
 const Engineer = require('../lib/Engineer');
 const Intern = require('../lib/Intern');
 
-
+// code to generate cards
 function generateCards(myTeam) {
     var cards = [];
     for (var i = 0; i < myTeam.length; i++) {
