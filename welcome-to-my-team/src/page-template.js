@@ -1,11 +1,80 @@
+const Manager = require('../lib/Manager');
+const Engineer = require('../lib/Engineer');
+const Intern = require('../lib/Intern');
 
-const generateMyTeam = team => {
 
-    
+function generateCards(myTeam) {
+    var cards = [];
+    for (var i = 0; i < myTeam.length; i++) {
+        var myTeamArray = myTeam[i];
+        switch (myTeamArray.getRole()) {
+            case 'Manager':
+                const manager = new Manager(myTeamArray.id, myTeamArray.name, myTeamArray.email, myTeamArray.officeNumber);
+                cards.push(generateManager(manager));
+                break;
+            case 'Engineer':
+                const engineer = new Engineer(myTeamArray.id, myTeamArray.name, myTeamArray.email, myTeamArray.gitHub);
+                cards.push(generateEngineer(engineer));
+                break;
+            case 'Intern':
+                const intern = new Intern(myTeamArray.id, myTeamArray.name, myTeamArray.email, myTeamArray.school);
+                cards.push(generateIntern(intern));
+                break;
+        }
+        return cards.join(``)
+    }
 }
 
+const generateManager = manager => {
+    return `
+        <div class="card team-card" style="width: 18rem;">
+        <div class="card-header bg-primary text-white">
+            <h3 class="card-title">${manager.getName()}</h3>
+            <h4 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${manager.getRole()}</h4>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">ID: ${manager.getId()}</li>
+            <li class="list-group-item">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a> </li>
+            <li class="list-group-item">Office Number: ${manager.getOfficeNumber()}</li>
+        </ul>
+    </div>
+        `;
+};
 
-const generatePage = (myTeam) => {
+const generateEngineer = engineer => {
+    return `
+        <div class="card team-card" style="width: 18rem;">
+        <div class="card-header bg-primary text-white">
+            <h3 class="card-title">${engineer.getName()}</h3>
+            <h4 class="card-title"><i class="fas fa-glasses mr-2"></i>${engineer.getRole()}</h4>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">ID: ${engineer.getId()}</li>
+            <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a> </li>
+            <li class="list-group-item">GitHub: ${engineer.getGitHub()}</li>
+        </ul>
+    </div>
+        `;
+};
+
+
+const generateIntern = intern => {
+    return `
+        <div class="card team-card" style="width: 18rem;">
+        <div class="card-header bg-primary text-white">
+            <h3 class="card-title">${intern.getName()}</h3>
+            <h4 class="card-title"><i class="fas fa-glasses mr-2"></i>${intern.getRole()}</h4>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">ID: ${intern.getId()}</li>
+            <li class="list-group-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a> </li>
+            <li class="list-group-item">School: ${intern.getSchool()}</li>
+        </ul>
+    </div>
+        `;
+};
+
+function generatePage(myTeam) {
     console.log(myTeam);
     return `
   <!DOCTYPE html>
@@ -23,22 +92,15 @@ const generatePage = (myTeam) => {
   </head>
   
   <body>
-      <header class="container bg-danger">
-          <h1 class="display-3 text-center">My Team</h1>
-      </header>
+    <header class="container-fluid bg-danger">
+      <div class="row">
+       <h1 class="col-12 text-white mb-3 text-center">My Team</h1>
+     </div>
+   </header>
       <div class="card" style="width: 18rem;">
-          <div class="card-header">
-              Featured
-          </div>
-          <ul class="list-group list-group-flush">
-              <li class="list-group-item">An item</li>
-              <li class="list-group-item">A second item</li>
-              <li class="list-group-item">A third item</li>
-          </ul>
+         ${generateCards(myTeam)}
       </div>
-  
   </body>
-  
   </html>
   `;
 };
