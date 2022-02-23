@@ -5,6 +5,7 @@ const Intern = require('../lib/Intern');
 // code to generate cards
 function generateCards(myTeam) {
     var cards = [];
+    console.log("inside generateCards function: ", myTeam);
     for (var i = 0; i < myTeam.length; i++) {
         var myTeamArray = myTeam[i];
         switch (myTeamArray.getRole()) {
@@ -21,8 +22,8 @@ function generateCards(myTeam) {
                 cards.push(generateIntern(intern));
                 break;
         }
-        return cards.join(``)
     }
+    return cards.join(``)
 }
 
 const generateManager = manager => {
