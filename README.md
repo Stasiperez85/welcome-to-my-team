@@ -1,1 +1,1 @@
-# tech-blogger-beast
+# reg-how-to
