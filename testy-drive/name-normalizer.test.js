@@ -8,13 +8,13 @@ describe('a name normalizer', () => {
     it('returns single word name', () =>
         expect(normalize("Plato")).toEqual("Plato"))
 
-    xit('swaps first and last names', () =>
+    it('swaps first and last names', () =>
         expect(normalize("Haruki Murakami")).toEqual("Murakami, Haruki"))
 
-    xit('trims leading and trailing whitespace', () =>
+    it('trims leading and trailing whitespace', () =>
         expect(normalize("  Big Boi   ")).toEqual("Boi, Big"))
 
-    xit('initializes middle name', () =>
+    it('initializes middle name', () =>
         expect(normalize("Henry David Thoreau")).toEqual("Thoreau, Henry D."))
 
     xit('does not initialize one letter middle name', () =>
